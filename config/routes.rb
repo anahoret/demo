@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :comments, :only => [:index, :create]
+  map.resources :comments, :only => [:index, :new, :create]
   map.root :controller => "comments"
 
   # The priority is based upon order of creation: first created -> highest priority.

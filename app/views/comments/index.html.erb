@@ -7,15 +7,4 @@
     <% end %>
 </dl>
 
-<h2>Add new comment</h2>
-
-<% form_for(@comment) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.text_area :body, :rows => 4 %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+<%= link_to 'New comment', new_comment_path %>
