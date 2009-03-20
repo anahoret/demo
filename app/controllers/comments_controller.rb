@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_filter :find_comments
   
+  caches_page :index
+  
   # GET /comments
   def index
     @comment = Comment.new
@@ -9,13 +11,10 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(params[:comment])
-
-    if @comment.save
-      flash[:notice] = 'Comment was successfully created.'
-      redirect_to root_url
-    else
-      render :action => "index"
-    end
+    @comment.save
+    
+    expire_page(root_path)
+    redirect_to(root_url)
   end
   
   private
