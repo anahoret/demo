@@ -13,6 +13,12 @@ role :web, "anahoret.com"
 role :db,  "anahoret.com", :primary => true
 
 namespace :deploy do
+  task :start, :roles => :app do
+  end
+
+  task :stop, :roles => :app do
+  end
+  
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
