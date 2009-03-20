@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: demo_production
+  database: test
   pool: 5
-  username: root
+  username: test
   password: 
   socket: /var/lib/mysql/mysql.sock
