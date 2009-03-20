@@ -1,0 +1,21 @@
+<h1>Comments</h1>
+
+<dl>
+    <% @comments.each do |comment| %>
+        <dt><%=h comment.created_at %></dt>
+        <dd><%=h comment.body %></dd>
+    <% end %>
+</dl>
+
+<h2>Add new comment</h2>
+
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
