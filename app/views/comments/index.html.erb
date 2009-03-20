@@ -2,7 +2,7 @@
 
 <dl>
     <% @comments.each do |comment| %>
-        <dt><%=h comment.created_at %></dt>
+        <dt><%=h comment.created_at.to_s(:short) %></dt>
         <dd><%=h comment.body %></dd>
     <% end %>
 </dl>
@@ -13,7 +13,7 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :rows => 4 %>
   </p>
   <p>
     <%= f.submit 'Create' %>
